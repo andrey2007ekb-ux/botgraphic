@@ -1,4 +1,5 @@
 import re
+import os
 import logging
 import matplotlib.pyplot as plt
 from io import BytesIO
@@ -6,7 +7,7 @@ from telegram import Update, ReplyKeyboardMarkup
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 
 # Вставь сюда свой токен
-BOT_TOKEN = "YOUR_TELEGRAM_BOT_TOKEN"
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
@@ -120,3 +121,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
